@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    overflow: hidden;
+}
+
+html,body,div{
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align:center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+
+[hidden] {
+    display: none !important;
+}
+
+
+.page-left .divConnectStatus{
+    text-shadow:black 0px 1px 2px;
+    text-align: center;
+}
+
+.page-left .mainWrap {
+    margin:0 auto;
+    width: 80%;
+    position: relative;
+    text-align:center;
+}
+
+.page-left .mainWrap .elementsWrap{
+    margin: 0 auto;
+    margin-top: 2px;
+    padding: 2px;
+    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 1) 0 5px 5px;
+    border-radius: 2px;
+    width: 80%;
+    text-align:center;
+}
+
+.page-left .mainWrap .elementsWrap .mapWrap{
+    float: left;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 1) 0 4px 18px;
+}
+
+.page-left .mainWrap .elementsWrap .mapWrap .divMapTip{
+    margin-top: 3px;
+}
+
+#map {
+    margin: 0 auto;
+    cursor: pointer;
+
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+
+    -moz-border-radius-topleft:20px;
+    -moz-border-radius-bottomright:20px;
+    -moz-border-radius-topright:20px;
+    -moz-border-radius-bottomleft:20px;
+
+    -moz-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+    -webkit-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+    -khtml-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+
+    box-shadow: rgba(150, 150, 150, 1) 0 4px 18px;
+}
+
+
+.page-left .mainWrap .elementsWrap .tableWrap{
+    float: right;
+    margin: 0 auto;
+    border: 1px solid rgba(100, 100, 100, 1);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 1) 0 4px 18px;
+}
+
+.div_clear_float{
+    clear: both;
+}
+
+.divInit{
+    margin-top: 10px;
+}
+
+.divInit table tr td{
+    text-align: center;
+}
+
+
+/* Pop Div Begin*/
+
+.popWrap{
+    z-index: 9999;
+    margin: 0 auto;
+    width: 100%;
+    height: 0px;
+    text-align:center;
+    top:20%;
+    position: fixed;
+    opacity: 1;
+}
+
+.popWrap .divPop{
+    margin: 0 auto;
+    padding: 0px 10px 0px 10px;
+    width: 50%;
+    text-align:center;
+    overflow: auto;
+}
+
+.popWrap .divPop div , .popWrap .divPop table{
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 1) 0 4px 18px;
+}
+
+/* Pop Div End*/
+
+
+
+#divInsertTop, #divInsertBottom {
+    display: none;
+    clear:both;
+    padding-top: 20px;
+    text-align:center;
+}
+
+
+
+
+/* Log in div begin */
+label {
+	color: #777;
+	font-size: 13px;
+}
+
+#divLogin {
+	width: 320px;
+	margin: 7em auto;
+}
+
+form {
+	margin-left: 8px;
+	padding: 16px 16px 40px 16px;
+	font-weight: normal;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 5px;
+	background: white;
+	border: 1px solid #E5E5E5;
+	-moz-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+	-webkit-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+	-khtml-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+	box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+}
+
+#divLogin form p {
+	margin-bottom: 0;
+}
+
+
+.input{
+	font-size: 24px;
+	width: 97%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 16px;
+	border: 1px solid #E5E5E5;
+	background: #FBFBFB;
+}
+
+form .forgetmenot {
+	font-weight: normal;
+	float: left;
+	margin-bottom: 0;
+}
+
+form .submit{
+	float: right;
+}
+/* Log in div end */
+
+
+
+
+/*page-list begin*/
+
+.page-list{
+    position: relative;
+    left: 0px;
+    /*border: 1px solid black;*/
+    text-align: left;
+    height: 65%;
+}
+
+/*page-list end*/
+
+/* page-left begin*/
+
+.page-left{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    /*border: 1px solid red;*/
+}
+
+/* page-left end*/
+
+
+
+
+
+/* page-right begin*/
+
+.page-right{
+    position: absolute;
+    top:0px;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+
+    /*border: 1px solid blue;*/
+}
+
+/* page-right end*/
+
+
+
+
+
+/* Gray Background begin*/
+#grey_background {
+    background:gray;
+    opacity: 0.8;
+    z-index:100;
+    width:100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+/* Gray Background end*/
+
+
+
+/* Footer Begin*/
+
+#footer {
+    background-image: -webkit-linear-gradient(
+        rgba(242, 242, 242, 0.9), rgba(222, 222, 222, 0.9));
+    bottom: 0;
+    color: #7F7F7F;
+    font-size: 0.9em;
+    font-weight: bold;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+#footer-border {
+    height: 1px;
+}
+
+#footer-content {
+    -webkit-box-align: center;
+    display: -webkit-box;
+    height: 49px;
+}
+
+#footer-content > * {
+    margin: 0 20px;
+}
+
+#dot-list {
+    /* Expand to take up all available horizontal space.  */
+    -webkit-box-flex: 1;
+    /* Center child dots. */
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.dot {
+    -webkit-box-flex: 1;
+    -webkit-margin-end: 10px;
+    -webkit-padding-start: 2px;
+    -webkit-transition: max-width 250ms, -webkit-margin-end 250ms;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* max-width: Set in new_tab.js. See measureNavDots() */
+    outline: none;
+    text-align: left;
+}
+
+.dot:last-child {
+    -webkit-margin-end: 0;
+}
+
+.dot.small {
+    -webkit-margin-end: 0;
+    max-width: 0;
+}
+
+.dot .selection-bar {
+    -webkit-transition: border-color 200ms;
+    border-bottom: 5px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    height: 10px;
+}
+
+.dot input {
+    -webkit-appearance: caret;
+    -webkit-margin-start: 2px;
+    -webkit-transition: color 200ms;
+    background-color: transparent;
+    cursor: inherit;
+    font: inherit;
+    height: auto;
+    margin-top: 2px;
+    padding: 1px 0;
+    width: 90%;
+}
+
+.dot input:focus {
+    cursor: auto;
+}
+
+/* Everything below here should be themed but we don't have appropriate colors
+ * yet.
+ */
+.dot input {
+    color: #b2b2b2;
+}
+
+.dot:focus input,
+.dot:hover input,
+.dot.selected input {
+    color: #7f7f7f;
+}
+
+.dot:focus .selection-bar,
+.dot:hover .selection-bar,
+.dot.drag-target .selection-bar {
+    border-color: #b2b2b2;
+}
+
+.dot.selected .selection-bar {
+    border-color: #7f7f7f;
+}
+
+/* Footer end*/
+
+.divWsrTip{
+    position: fixed;
+    bottom: 25%;
+    width: 100%;
+    height: 1px;
+}
+
+.div_rawData {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+}
+
+
+#test{
+    position: fixed;
+    bottom:60px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+    display: none;
+}
+
+#test .btns{
+    width:500px;
+    margin: 0 auto;
+}

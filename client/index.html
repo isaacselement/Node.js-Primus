@@ -1,0 +1,217 @@
+<html>
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="./resources/javascript/jquery-1.7.2.js"></script>
+
+    <link rel="stylesheet" href="./resources/index.css" />
+    <link rel="stylesheet" href="./resources/bootstrap.css" />
+
+    <script type="text/javascript" src="./context/ContextManager.js"></script>
+    <script type="text/javascript" src="./base/Utils.js"></script>
+    <script type="text/javascript" src="./base/DOMHelper.js"></script>
+    <script type="text/javascript" src="./context/ImageCache.js"></script>
+
+    <script type="text/javascript" src="./base/Grid.js"></script>
+
+    <script type="text/javascript" src="./view/PanelManager.js"></script>
+    <script type="text/javascript" src="./view/LayerManager.js"></script>
+    <script type="text/javascript" src="./view/ViewManager.js"></script>
+
+    <script type="text/javascript" src="./actor/ActorManager.js"></script>
+    <script type="text/javascript" src="./data/DataManager.js"></script>
+    <script type="text/javascript" src="./data/WebSocketManager.js"></script>
+    <script type="text/javascript" src="./data/AjaxManager.js"></script>
+
+    <script type="text/javascript" src="./launchApp.js"></script>
+
+    <link rel="icon" type="image/png" href="./resources/images/brand.png">
+
+</head>
+<body>
+
+    <div id='divInsertTop' class='divInsertTop'></div>
+
+    <!-- page-list begin-->
+    <div id="page-list" class="page-list" draggable="true">
+
+        <!-- page_game begin-->
+        <div id="page-left" class="page-left" draggable="true">
+
+            <div id='divConnectStatus' class="divConnectStatus">
+                WebSocket Status : <span></span>
+            </div>
+
+            <!-- main wrap begin-->
+            <div class="mainWrap">
+
+                <!-- elements wrap begin-->
+                <div class="elementsWrap" id='elementsWrap' style="display: none" >
+
+                    <div class="divInfo" id="divInfo">
+                        <table class="table table-bordered table-condensed">
+                            <tr>
+                                <td>
+                                    <a id='btn_worlds' href="javascript:void(0)" class="btn btn-primary">Worlds</a>
+                                </td>
+                                <td>Current Worlds:
+                                    <a id='btn_currentWorld' href="javascript:void(0)" class="btn btn-primary">Worlds</a>
+                                </td>
+                                <td>Avatar:
+                                    <a id='btn_avatar' href="javascript:void(0)" class="btn btn-primary">Avatar</a>
+                                </td>
+                                <td>p$:
+                                    <a id='btn_balance' href="javascript:void(0)" class="btn btn-primary">Balance</a>
+                                </td>
+                                <td>
+                                    <a id='btn_signOut' href="javascript:void(0)" class="btn btn-primary">Sign Out</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="mapWrap" id="mapWrap">
+                        <canvas id="map" width='448px' height='448px'>
+                        Your browser does not support the canvas element.
+                        </canvas>
+                        <div class="divMapTip" id="divMapTip">
+                            <img src="./resources/images/gif_horizontal_blank.png" alt=''>
+                        </div>
+                    </div>
+
+
+                    <div class="tableWrap" id="tableWrap">
+
+                    </div>
+
+                    <div class="div_clear_float"></div>
+
+                    <div class="divInit">
+                        <table class="table table-bordered table-condensed">
+                            <tr>
+                                <td>
+                                    <a id='loadMenuBtn' href="javascript:void(0)" class="btn btn-primary">Load Menu</a>
+                                </td>
+                                <td>
+                                    <a id='loadContact' href="javascript:void(0)" class="btn btn-primary">Load Contact</a>
+                                </td>
+                                <td>
+                                    <a id='loadChatRooms' href="javascript:void(0)" class="btn btn-primary">Load Chat Rooms</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- elements wrap end-->
+
+
+                <!-- Login Div Begin -->
+                <div id='divLogin' class="divLogin">
+                    <form id="loginform" method="post">
+                        <p>
+                            <label>User<br>
+                                <input type="text" id="user_login" class="input" value="" size="20" tabindex="10"></label>
+                        </p>
+
+                        <p>
+                            <label>Password<br>
+                                <input type="password" id="user_pass" class="input" value="" size="20" tabindex="20"></label>
+                        </p>
+
+                        <p class="forgetmenot">
+                            <label>
+                                <input type="checkbox" id="rememberme" value="forever" tabindex="90"> Remember me
+                            </label>
+                        </p>
+
+                        <p class="submit">
+                            <a href="javascript:void(0)" id='user_loginBtn' class="btn" tabindex="100">Login</a>
+                        </p>
+                    </form>
+                </div>
+                <!-- Login Div End -->
+
+            </div>
+            <!-- main wrap end-->
+
+        </div>
+
+        <div id="page-right" class="page-right" draggable="true">
+
+            <div id="div-msg" class="div-msg"></div>
+
+            <div id="div-chat" class="div-chat" style="display: none">
+
+                <div id="divMsgCTRL" style="float:left;position:relative">
+
+                    <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu'>
+                    <li><a tabindex='-1' href='javascript:void(0)'>Red</a></li>
+                    <li><a tabindex='-1' href='javascript:void(0)'>Yellow</a></li>
+                    <li><a tabindex='-1' href='javascript:void(0)'>Cyan</a></li>
+                    <li><a tabindex='-1' href='javascript:void(0)'>Green</a></li>
+                    <li><a tabindex='-1' href='javascript:void(0)'>Black</a></li>
+
+                    <li class='divider'></li>
+                    <li id="refresh_msg"><a tabindex='-1' href='javascript:void(0)'>Refresh</a></li>
+                    <li id="refresh_msg_per_2s"><a tabindex='-1' href='javascript:void(0)'>Refresh Per 2s</a></li>
+                    </ul>
+
+                </div>
+
+                <textarea rows="" cols="" id="content" class="" style="height: 150px;width:70%"> </textarea>
+
+                <div>
+                    <a id="btn-speak" class="btn"> Speak </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- page-list end-->
+
+    <div id='divWsrTip' class="divWsrTip">
+        <img src="./resources/images/gif_wsr_blank.png" alt="">
+    </div>
+
+
+    <div id='divInsertBottom' class='divInsertBottom'></div>
+
+    <div id='grey_background' class="grey_background"></div>
+
+
+    <div class="popWrap" id="popWrap">
+        <div id='divPop' class='divPop'></div>
+    </div>
+
+    <div class="div_rawData">
+        <hr />
+        <textarea class="txt_rawData" id="txt_rawData" rows="5" cols="100"></textarea>
+    </div>
+
+
+    <div id="footer">
+        <div id="footer-border"></div>
+        <div id="footer-content" class="enable-cws-experiment">
+            <img id="logo-img" src="">
+
+            <ul id="dot-list">
+                <li class="dot selected" role="button" title="Most visited" tabindex="3">
+                    <div class="selection-bar"></div><input spellcheck="false" disabled="">
+                </li>
+                <li class="dot" role="button" title="Apps">
+                    <div class="selection-bar"></div><input spellcheck="false" disabled="">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    <!-- For Test End -->
+
+
+</body>
+</html>
