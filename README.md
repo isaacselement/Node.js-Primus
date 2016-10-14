@@ -1,8 +1,8 @@
-### 1 . Install dependencies
+### Install dependencies
 
 1 . npm install socket.io
 
-### 2 . Run Application
+### Run Application
 
 1 . node app.js 
 
